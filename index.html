@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capx WebStorage → LocalStorage converter</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>WebStorage → LocalStorage</h1>
+  <p class="sub">Convert a Construct 2 <code>.capx</code> that uses the WebStorage plugin into a <code>.capx</code> that uses LocalStorage. Everything runs in your browser.</p>
+
+  <button class="drop" id="drop" type="button"><b>Drop a .capx file here</b><span>or click to choose one</span></button>
+  <input type="file" id="file" accept=".capx,.zip" hidden>
+
+  <section class="card" id="logwrap" hidden>
+    <div class="bar">
+      <span class="badge" id="status">idle</span>
+      <label class="chk"><input type="checkbox" id="verbose"> verbose</label>
+      <button class="btn ghost" id="copy" type="button">Copy log</button>
+      <a class="btn" id="dl" href="#" hidden>Download</a>
+    </div>
+    <div class="log" id="log" role="log" aria-live="polite"></div>
+  </section>
+
+  <p class="sub small">Best effort: events that have no verified LocalStorage equivalent are removed and listed as WARN lines in the log for manual review.</p>
+</main>
+<script src="capx-to-capx-converter.js"></script>
+</body>
+</html>
